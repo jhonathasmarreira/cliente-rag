@@ -1,0 +1,56 @@
+# Binários / GRFs grandes (Gravity) — manter local; versionar configs
+*.grf
+*.exe
+*.dll
+*.sys
+*.vxd
+*.rpi
+*.asi
+*.m3d
+*.dll_old
+*_old
+
+# Áudio / vídeo / mídia de runtime
+*.mp3
+*.wav
+*.ogg
+*.avi
+*.mpg
+*.mpeg
+*.bik
+
+# Pastas pesadas (milhares de arquivos / centenas de MB–GB)
+AI/
+BGM/
+skin/
+data/texture/
+SaveData/
+ScreenShot/
+
+# Atalhos / lixo Windows
+*.lnk
+Thumbs.db
+.DS_Store
+desktop.ini
+
+# Runtime / logs
+*.log
+ProhibitionLog.gd
+
+# Instalador gerado (manter fonte: .cs / scripts)
+installer/payload/
+installer/dist/
+
+# Exceções — configs e scripts do projeto
+!dinput.ini
+!dgVoodoo.conf
+!DATA.ini
+!Ragnarok.ini
+!FORMAT.CFG
+!KOR_LANG.CFG
+!Patch.inf
+!patchRE.inf
+!LEIA-ME.txt
+!JOGAR.bat
+!AbrirBrasaRO.ps1
+!FreeMouse.ps1

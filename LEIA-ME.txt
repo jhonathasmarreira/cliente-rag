@@ -1,0 +1,45 @@
+﻿BrasaRO Ep 13.2 — PT-BR
+
+Abrir: BrasaRO.exe
+Setup: Setup.exe (1024x768 janela)
+Servidor: 127.0.0.1:6900 (local)
+Login: admin / admin
+GM: admCaio / Caio
+E-mail exclusao: admin@localhost
+
+
+========================================================
+CAUSA DO "CRASH" COM ESC / ENTER (DEPOIS DO LOGIN)
+========================================================
+Pesquisado em rAthena / Hercules / NEMO (CancelToLoginWindow,
+TranslateClient, msgstringtable):
+
+1) OVERFLOW NO BOTAO CANCEL (principal)
+   - TranslateClient trocou o Cancel coreano por "Voltar" (6 chars)
+     num slot de 4 chars + NUL -> corrompia memoria ao desenhar o
+     dialogo de Esc/Cancel na selecao de personagem.
+   - CORRIGIDO: slot agora usa "Back" (cabe no buffer).
+   - msgstringtable linha Cancelar# (8) > Cancel# (6) ingles
+     - CORRIGIDO: Cancelar# -> Voltar# (6 chars).
+
+2) Patch NEMO "Cancel to Login Window"
+   - Correcao oficial da comunidade para Cancel/X no char select
+     (rAthena topic 118881: usar NEMO 4144 com CancelToLoginWindow).
+   - Neste client 2010-07-30 o padrao ainda falha no Step 3
+     (mesmo apos procurar "Aviso"). Esc continua abrindo
+     "Tem certeza que deseja sair?" (comportamento original).
+   - Enter no OK desse aviso FECHA o jogo (nao e crash de AV).
+
+3) Resolucao partida
+   - SaveData\OptionInfo.lua em 1680x1050 quebrava UI.
+   - Mantido em 1024x768.
+
+========================================================
+O QUE FOI REBUILDADO
+========================================================
+- BrasaRO.exe regenerado via NEMO (TranslateClient sem overflow).
+- data\msgstringtable.txt: Cancelar -> Voltar.
+- OptionInfo.lua: 1024x768.
+
+Se a tela partir: Setup.exe 1024x768 e apague
+  HKCU\Software\Gravity Soft\Ragnarok\UIRectInfo

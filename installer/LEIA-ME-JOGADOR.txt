@@ -1,0 +1,18 @@
+BrasaRO ? Cliente Epis?dio 13.2 (PT-BR)
+========================================
+
+Servidor: 129.213.27.121
+Porta login: 6900
+Conta teste: admin / admin
+
+Como jogar
+----------
+1. Instale com BrasaRO-Setup.exe (ou rode Instalar-BrasaRO.ps1).
+2. Atalho "BrasaRO" no Desktop / Menu Iniciar.
+3. Se a tela ficar azul ou errada: abra "BrasaRO Setup" e
+   escolha o device dgVoodoo TnL HAL, 1024x768, janela.
+
+Requisitos
+----------
+- Windows 10/11 64-bit
+- DirectX / dgVoodoo incluso no pacote
